@@ -161,6 +161,8 @@ These issues already have active PRs addressing them:
 
 ## Priority Matrix — What to Work On
 
+> **Legend:** Items marked with a PR badge have an existing pull request. Items marked "No assignee, no PR" are fully open for contribution.
+
 Scoring criteria:
 
 - **Impact** (1-5): How many users are affected or how much it advances the project
@@ -168,44 +170,54 @@ Scoring criteria:
 - **Merge Likelihood** (1-5): How likely the PR gets merged (based on maintainer signals, labels, existing PRs)
 - **Priority Score** = (Impact × 2 + Merge Likelihood × 2) − Effort
 
+> **Note:** As of 2026-04-01, **no open issues have assignees**. Availability is determined solely by whether an active PR already exists.
+
 ### Rank 1: High Priority — Do These First
 
-| Rank | Issue | Title                                               | Impact | Effort | Merge | Score | Why                                                                                                                                                                |
-| ---- | ----- | --------------------------------------------------- | ------ | ------ | ----- | ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| 1    | #724  | E2E for Standalone Output                           | 4      | 2      | 5     | 16    | Labeled `good first issue` + `help wanted`. Standalone output (#178) just merged — maintainers want test coverage. We already did this exact pattern for #564/#686 |
-| 2    | #581  | Remove clientReferenceDedupPlugin                   | 3      | 2      | 5     | 14    | Maintainer consensus from james-elicx and hi-ogawa. Clear scope, low risk removal                                                                                  |
-| 3    | #572  | react-server export condition missing in CF Workers | 4      | 3      | 4     | 13    | Deploy-blocking for CF Workers users. No competing PR. Build config fix with clear scope                                                                           |
-| 4    | #204  | Systematic audit of Next.js test suite              | 3      | 3      | 5     | 13    | Infrastructure work maintainers value (1 thumbs up). Builds expertise across the codebase. No competing PR                                                         |
+| Rank | Issue | Title                                               | Status           | Impact | Effort | Merge | Score | Why                                                                                                                                                                |
+| ---- | ----- | --------------------------------------------------- | ---------------- | ------ | ------ | ----- | ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| 1    | #724  | E2E for Standalone Output                           | **Open — no PR** | 4      | 2      | 5     | 16    | Labeled `good first issue` + `help wanted`. Standalone output (#178) just merged — maintainers want test coverage. We already did this exact pattern for #564/#686 |
+| 2    | #581  | Remove clientReferenceDedupPlugin                   | **Open — no PR** | 3      | 2      | 5     | 14    | Maintainer consensus from james-elicx and hi-ogawa. Clear scope, low risk removal                                                                                  |
+| 3    | #572  | react-server export condition missing in CF Workers | **Open — no PR** | 4      | 3      | 4     | 13    | Deploy-blocking for CF Workers users. No competing PR. Build config fix with clear scope                                                                           |
+| 4    | #204  | Systematic audit of Next.js test suite              | **Open — no PR** | 3      | 3      | 5     | 13    | Infrastructure work maintainers value (1 thumbs up). Builds expertise across the codebase. No competing PR                                                         |
 
 ### Rank 2: Medium Priority — Strong Opportunities
 
-| Rank | Issue | Title                                        | Impact | Effort | Merge | Score | Why                                                                                                              |
-| ---- | ----- | -------------------------------------------- | ------ | ------ | ----- | ----- | ---------------------------------------------------------------------------------------------------------------- |
-| 5    | #666  | App Router dev fails on raw CJS packages     | 4      | 3      | 4     | 13    | Blocks real-world usage. Has 1 thumbs up. PR #665 exists but targets Pages Router only — App Router side is open |
-| 6    | #537  | Alternating failures with Drizzle + Postgres | 4      | 4      | 4     | 12    | 5 comments = active discussion. Affects production CF Workers users. No competing PR                             |
-| 7    | #253  | Refactor template code generation            | 3      | 3      | 4     | 11    | Recent plugin extraction refactors (#704-706) show maintainers want this. Check what remains                     |
-| 8    | #605  | AST-based route report generation            | 3      | 3      | 4     | 11    | Enhancement label. Draft PR #606 exists — could take over or collaborate if stale                                |
+| Rank | Issue | Title                                        | Status                           | Impact | Effort | Merge | Score | Why                                                                                                              |
+| ---- | ----- | -------------------------------------------- | -------------------------------- | ------ | ------ | ----- | ----- | ---------------------------------------------------------------------------------------------------------------- |
+| 5    | #666  | App Router dev fails on raw CJS packages     | PR #665 covers Pages Router only | 4      | 3      | 4     | 13    | Blocks real-world usage. Has 1 thumbs up. PR #665 exists but targets Pages Router only — App Router side is open |
+| 6    | #537  | Alternating failures with Drizzle + Postgres | **Open — no PR**                 | 4      | 4      | 4     | 12    | 5 comments = active discussion. Affects production CF Workers users. No competing PR                             |
+| 7    | #253  | Refactor template code generation            | **Open — no PR**                 | 3      | 3      | 4     | 11    | Recent plugin extraction refactors (#704-706) show maintainers want this. Check what remains                     |
+| 8    | #605  | AST-based route report generation            | Has draft PR #606 — may be stale | 3      | 3      | 4     | 11    | Enhancement label. Draft PR #606 exists — could take over or collaborate if stale                                |
 
 ### Rank 3: High Impact but High Effort — Plan Carefully
 
-| Rank | Issue | Title                              | Impact | Effort | Merge | Score | Why                                                                                                            |
-| ---- | ----- | ---------------------------------- | ------ | ------ | ----- | ----- | -------------------------------------------------------------------------------------------------------------- |
-| 9    | #80   | Pluggable deployment adapters      | 5      | 5      | 4     | 13    | **15 thumbs up** — highest community demand. Huge scope though. PR #76 (Netlify PoC) is draft — study it first |
-| 10   | #9    | Static pre-rendering at build time | 5      | 5      | 4     | 13    | **9 thumbs up** — second highest demand. 8 comments. Core feature gap. Major undertaking                       |
-| 11   | #639  | Suspense fallback double-flash     | 4      | 4      | 3     | 9     | 8 comments = pain point. PR #647 exists but not merged after weeks — may need a different approach             |
-| 12   | #672  | RSC streaming crash: enqueueModel  | 5      | 5      | 3     | 11    | Critical crash but deep RSC internals. High reward if solved                                                   |
+| Rank | Issue | Title                              | Status                         | Impact | Effort | Merge | Score | Why                                                                                                            |
+| ---- | ----- | ---------------------------------- | ------------------------------ | ------ | ------ | ----- | ----- | -------------------------------------------------------------------------------------------------------------- |
+| 9    | #80   | Pluggable deployment adapters      | Has draft PR #76 (Netlify PoC) | 5      | 5      | 4     | 13    | **15 thumbs up** — highest community demand. Huge scope though. PR #76 (Netlify PoC) is draft — study it first |
+| 10   | #9    | Static pre-rendering at build time | **Open — no PR**               | 5      | 5      | 4     | 13    | **9 thumbs up** — second highest demand. 8 comments. Core feature gap. Major undertaking                       |
+| 11   | #639  | Suspense fallback double-flash     | Has PR #647 (open, not merged) | 4      | 4      | 3     | 9     | 8 comments = pain point. PR #647 exists but not merged after weeks — may need a different approach             |
+| 12   | #672  | RSC streaming crash: enqueueModel  | **Open — no PR**               | 5      | 5      | 3     | 11    | Critical crash but deep RSC internals. High reward if solved                                                   |
 
-### Rank 4: Watch List — PRs Already In Flight
+### Rank 4: Taken — PRs Already In Flight
 
-These have active PRs. Best contribution is **reviewing the PR** rather than starting fresh:
+These issues have active PRs addressing them. Best contribution is **reviewing/testing the PR** rather than starting fresh.
 
-| Issue | PR   | Topic                             | PR Status | Action             |
-| ----- | ---- | --------------------------------- | --------- | ------------------ |
-| #654  | #698 | Soft RSC navigation for redirects | Open      | Review & test      |
-| #652  | #690 | Firefox navigation hang           | Open      | Review & test      |
-| #722  | #731 | next-safe-action compat           | Draft     | Watch for progress |
-| #730  | #721 | Intercepting routes               | Draft     | Watch for progress |
-| #540  | #548 | Vite 8 deprecated config          | Draft     | Could help finish  |
+| Issue | PR   | Topic                                | PR Author       | PR Status | Action             |
+| ----- | ---- | ------------------------------------ | --------------- | --------- | ------------------ |
+| #654  | #698 | Soft RSC navigation for redirects    | yunus25jmi1     | Open      | Review & test      |
+| #652  | #690 | Firefox navigation hang              | Divkix          | Open      | Review & test      |
+| #722  | #731 | next-safe-action compat              | southpolesteve  | Draft     | Watch for progress |
+| #730  | #721 | Intercepting routes source-aware     | Debbl           | Draft     | Watch for progress |
+| #540  | #548 | Vite 8 deprecated config             | yunus25jmi1     | Draft     | Could help finish  |
+| #675  | #594 | getInitialProps / next/document      | james-elicx     | Draft     | Watch for progress |
+| #585  | #665 | CJS node_modules in Pages Router dev | southpolesteve  | Open      | Review & test      |
+| #562  | #653 | Cache seeding for Workers            | NathanDrake2406 | Open      | Review & test      |
+| #472  | #474 | assetPrefix support                  | elydelva        | Open      | Review & test      |
+| #407  | #406 | create-vinext-app CLI                | Divkix          | Open      | Review & test      |
+| #389  | #536 | Precompile next.config matchers      | SeolJaeHyeok    | Draft     | Could help finish  |
+| #177  | #196 | next-intl webpack aliases            | SeolJaeHyeok    | Open      | Review & test      |
+| #199  | #217 | Rewrites static file serving         | yunus25jmi1     | Draft     | Could help finish  |
 
 ### Rank 5: Low Priority / Skip
 
